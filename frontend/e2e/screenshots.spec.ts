@@ -224,9 +224,16 @@ test('capture portfolio showcase screens', async ({ page }) => {
   await page.getByRole('button', { name: 'Compare recovery plans' }).click()
   await page.screenshot({ path: '../docs/screenshots/recovery-intelligence.png', fullPage: true })
 
-  // Capture Analyze recovery options output
+  // Capture Analyze recovery options output (focused on the core recommendations & simulation)
   await page.goto('/projects/acme-crm/recovery')
   await page.getByRole('button', { name: 'Analyze recovery options' }).click()
   await expect(page.getByText('Grounded recovery strategies')).toBeVisible()
-  await page.screenshot({ path: '../docs/screenshots/recovery-analysis.png', fullPage: true })
+
+  await page.evaluate(() => {
+    const header = document.querySelector('header')
+    if (header) header.style.position = 'static'
+  })
+
+  const proposalView = page.locator('div.space-y-5:has(section:has-text("Generated recommendations"))').last()
+  await proposalView.screenshot({ path: '../docs/screenshots/recovery-analysis.png' })
 })

@@ -15,10 +15,13 @@ ContextOS demonstrates a safer operating model:
 `Detect → Retrieve → Reason → Simulate → Approve → Execute → Verify`
 
 ![Synthetic portfolio dashboard](docs/screenshots/portfolio.png)
+*Figure 1: Portfolio Operations & Risk Detection — Aggregates live delivery health across onboarding projects derived deterministically from backend schedule logic, surfacing blocked tasks, critical path variance, and delivery risks without relying on manual status updates.*
 
 ![Analyze recovery options with grounded recommendations and historical evidence](docs/screenshots/recovery-analysis.png)
+*Figure 2: Grounded Recovery Analysis & Simulation — Synthesizes pgvector-retrieved historical incident evidence with structured AI reasoning to generate actionable recovery strategies, customer prerequisites, and deterministic baseline vs. proposed forecast comparisons.*
 
 ![Recovery Intelligence with deterministic comparison](docs/screenshots/recovery-intelligence.png)
+*Figure 3: What-If Scenario Comparison & Governed Execution — Evaluates conditional recovery assumptions against the scheduling engine, calculates verified working days saved on the critical path, and routes feasible proposals through an explicit operator approval and audit workflow.*
 
 ## Product capabilities
 
