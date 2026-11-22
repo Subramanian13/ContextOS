@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color: #18212f; background: #f4f6f8; font-synthesis: none; }
+  body { @apply m-0 min-w-[320px] bg-canvas text-base antialiased; }
+  button, a { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2; }
+}
+
+@layer components {
+  .panel { @apply rounded-xl border border-slate-200 bg-white shadow-panel; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.14em] text-slate-500; }
+  .status-pill { @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold; }
+}

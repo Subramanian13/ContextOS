@@ -1,0 +1,22 @@
+[
+  {"id":"E01","category":"missing_credentials","query":"missing CRM OAuth credentials","expected_evidence":["INC-001"],"plan":"valid_reassign","unblock":true,"expected_approval":true},
+  {"id":"E02","category":"missing_credentials","query":"production API credentials delayed security approval","expected_evidence":["INC-001"],"plan":"no_change","unblock":false,"expected_approval":true},
+  {"id":"E03","category":"crm_authentication","query":"CRM authentication 401 OAuth audience","expected_evidence":["INC-002"],"plan":"valid_reassign","unblock":true,"expected_approval":true},
+  {"id":"E04","category":"crm_authentication","query":"Salesforce production token validation failure","expected_evidence":["INC-002"],"plan":"invalid_resource","unblock":true,"expected_approval":false},
+  {"id":"E05","category":"data_mapping","query":"duplicate account data mapping external identifier","expected_evidence":["INC-003"],"plan":"no_change","unblock":true,"expected_approval":true},
+  {"id":"E06","category":"data_mapping","query":"late mapping change invalidated UAT","expected_evidence":["INC-009"],"plan":"invalid_dependency","unblock":true,"expected_approval":false},
+  {"id":"E07","category":"data_mapping","query":"CRM picklist mapping metadata changed","expected_evidence":["INC-012"],"plan":"valid_reassign","unblock":true,"expected_approval":true},
+  {"id":"E08","category":"resource_conflict","query":"shared integration engineer resource conflict","expected_evidence":["INC-005"],"plan":"valid_reassign","unblock":true,"expected_approval":true},
+  {"id":"E09","category":"resource_conflict","query":"parallel work competing for one specialist","expected_evidence":["INC-005"],"plan":"invalid_resource","unblock":true,"expected_approval":false},
+  {"id":"E10","category":"customer_approval","query":"customer configuration approval delayed","expected_evidence":["INC-004"],"plan":"no_change","unblock":false,"expected_approval":true},
+  {"id":"E11","category":"customer_approval","query":"single approver UAT bottleneck","expected_evidence":["INC-011"],"plan":"unsupported_action","unblock":true,"expected_approval":false},
+  {"id":"E12","category":"customer_approval","query":"certificate customer owner delay","expected_evidence":["INC-008"],"plan":"invalid_citation","unblock":true,"expected_approval":false},
+  {"id":"E13","category":"testing_bottleneck","query":"testing bottleneck test environment","expected_evidence":["INC-006"],"plan":"valid_reassign","unblock":true,"expected_approval":true},
+  {"id":"E14","category":"testing_bottleneck","query":"QA data setup coupled to connector completion","expected_evidence":["INC-006"],"plan":"no_change","unblock":true,"expected_approval":true},
+  {"id":"E15","category":"invalid_dependency","query":"schedule dependency cycle infeasible recovery","expected_evidence":["INC-005"],"plan":"invalid_dependency","unblock":true,"expected_approval":false},
+  {"id":"E16","category":"invalid_dependency","query":"remove required go live dependencies","expected_evidence":["INC-011"],"plan":"remove_dependency","unblock":true,"expected_approval":false},
+  {"id":"E17","category":"infeasible_plan","query":"credential blocker remains unresolved","expected_evidence":["INC-001"],"plan":"valid_reassign","unblock":false,"expected_approval":true},
+  {"id":"E18","category":"infeasible_plan","query":"SSO login loop ACS URL","expected_evidence":["INC-007"],"plan":"invalid_structure","unblock":true,"expected_approval":false},
+  {"id":"E19","category":"infeasible_plan","query":"firewall blocks API callback","expected_evidence":["INC-010"],"plan":"unsupported_action","unblock":true,"expected_approval":false},
+  {"id":"E20","category":"crm_authentication","query":"OAuth connected app client permission missing","expected_evidence":["INC-001","INC-002"],"plan":"valid_reassign","unblock":true,"expected_approval":true}
+]

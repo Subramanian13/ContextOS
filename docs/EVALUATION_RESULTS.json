@@ -1,0 +1,55 @@
+{
+  "deterministic": {
+    "scenarios": 20,
+    "retrieval_recall_at_5": 0.95,
+    "retrieval_mrr": 0.8916666666666666,
+    "evidence_citation_validity": 0.95,
+    "structured_output_validity": 0.85,
+    "unsupported_action_rate": 0.1,
+    "schedule_feasibility_rate": 0.75,
+    "approval_safety": 1.0,
+    "execution_correctness": 1.0
+  },
+  "live_subset": {
+    "provider": "OpenAI embeddings and structured Responses + PostgreSQL/pgvector",
+    "scenarios": [
+      {
+        "id": "E01",
+        "retrieved": [
+          "INC-001",
+          "INC-002",
+          "INC-008",
+          "INC-007",
+          "INC-012"
+        ],
+        "expected": [
+          "INC-001"
+        ],
+        "hit": true
+      },
+      {
+        "id": "E02",
+        "retrieved": [
+          "INC-001",
+          "INC-010",
+          "INC-004",
+          "INC-002",
+          "INC-007"
+        ],
+        "expected": [
+          "INC-001"
+        ],
+        "hit": true
+      }
+    ],
+    "generation": {
+      "project_id": "acme-crm",
+      "structured_output_valid": true,
+      "citation_valid": true,
+      "supported_actions_only": true,
+      "scheduler_validated": true,
+      "actual_forecast_status": "unresolved",
+      "projected_forecast_status": "unresolved"
+    }
+  }
+}
