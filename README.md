@@ -16,6 +16,8 @@ ContextOS demonstrates a safer operating model:
 
 ![Synthetic portfolio dashboard](docs/screenshots/portfolio.png)
 
+![Analyze recovery options with grounded recommendations and historical evidence](docs/screenshots/recovery-analysis.png)
+
 ![Recovery Intelligence with deterministic comparison](docs/screenshots/recovery-intelligence.png)
 
 ## Product capabilities
