@@ -143,7 +143,7 @@ Requirements: Docker, Python 3.12, Node.js 22, and `uv`.
 
 ```bash
 # Clone the repository
-git clone https://github.com/Subramanian13/Rocketlane.git
+git clone https://github.com/Subramanian13/ContextOS.git
 cd Rocketlane
 
 # Configure environment variables
