@@ -12,14 +12,24 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
+  migrate:
+    build: ./backend
+    restart: "no"
+    env_file:
+      - path: ${CONTEXTOS_ENV_FILE:-.env.production}
+        required: true
+    depends_on:
+      db: {condition: service_healthy}
+    command: ["uv", "run", "alembic", "upgrade", "head"]
   api:
     build: ./backend
     restart: unless-stopped
     env_file:
-      - path: .env.production
+      - path: ${CONTEXTOS_ENV_FILE:-.env.production}
         required: false
     depends_on:
       db: {condition: service_healthy}
+      migrate: {condition: service_completed_successfully}
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready')"]
       interval: 30s
@@ -28,7 +38,7 @@ services:
   frontend:
     build:
       context: ./frontend
-      args: {VITE_API_BASE_URL: "${PUBLIC_API_URL}"}
+      args: {VITE_API_BASE_URL: "${PUBLIC_API_URL:-}"}
     restart: unless-stopped
     ports: ["8080:80"]
     depends_on: [api]

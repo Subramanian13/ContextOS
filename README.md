@@ -203,6 +203,8 @@ DEMO_MODE=true
 DEMO_WRITE_ENABLED=false
 ```
 
+The single-host Compose configuration publishes the Nginx frontend on port `8080`, proxies API and health requests internally, and runs database migrations before starting FastAPI. Shared public workflow mutations remain disabled because the prototype has no user/session isolation.
+
 See [deployment preparation](docs/DEPLOYMENT.md) for migrations, pgvector, health checks, secrets, operational requirements, and hosting choices.
 
 ## Known limitations

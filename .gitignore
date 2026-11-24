@@ -88,3 +88,4 @@ vite.config.d.ts
 *.sqlite3
 *.db
 *.log
+.neon
