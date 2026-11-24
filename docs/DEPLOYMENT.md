@@ -34,6 +34,8 @@ Never put `OPENAI_API_KEY` or `DEMO_OPERATOR_KEY` in the frontend build. If shar
 5. Build the frontend with `VITE_API_BASE_URL` pointing to the public API.
 6. Verify CORS, TLS, security headers, read-only public mode, logs, and alerting.
 
+The backend container runs `alembic upgrade head` from `start.sh` before starting Uvicorn. On Render, leave the **Docker Command** field empty so the image's tested `CMD` is used; `PORT` and `WEB_CONCURRENCY` are read from the platform environment.
+
 ## Single-host container deployment
 
 The production Compose file serves the frontend and API on one origin. Nginx proxies `/api/*` and `/health*` to the private API container; only port `8080` is published. The `migrate` one-shot service must complete before the API starts.

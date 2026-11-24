@@ -5,6 +5,9 @@ from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 def normalize_database_url(url: str) -> str:
     """Use the installed psycopg v3 driver for provider-neutral Postgres URLs."""
+    url = url.strip()
+    if len(url) >= 2 and url[0] == url[-1] and url[0] in {"'", '"'}:
+        url = url[1:-1]
     if url.startswith("postgresql://"):
         return url.replace("postgresql://", "postgresql+psycopg://", 1)
     return url
